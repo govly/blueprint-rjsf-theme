@@ -1,3 +1,9 @@
+## [1.0.7](https://github.com/anikitenko/bp5-rjsf-theme/compare/v1.0.6...v1.0.7) (2025-03-28)
+
+### Bug Fixes
+
+* **FieldTemplate:** use React.Children.toArray ([7d82cdc](https://github.com/anikitenko/bp5-rjsf-theme/commit/7d82cdc54830944906cb87d19a2bd49466c09cb2))
+
 ## [1.0.6](https://github.com/anikitenko/bp5-rjsf-theme/compare/v1.0.5...v1.0.6) (2025-03-28)
 
 ### Bug Fixes
