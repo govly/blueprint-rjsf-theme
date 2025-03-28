@@ -1,7 +1,9 @@
 import {Button, ControlGroup, FormGroup, HTMLSelect, InputGroup, MenuItem, TextArea} from "@blueprintjs/core";
-import {ChangeEvent, FocusEvent, FocusEventHandler, useState} from "react";
+import React, {ChangeEvent, FocusEvent, FocusEventHandler, useState} from "react";
+import type {ItemRenderer} from '@blueprintjs/select';
 import {Suggest} from "@blueprintjs/select";
-import {getUiOptions, WidgetProps} from "@rjsf/utils";
+import type {WidgetProps} from '@rjsf/utils';
+import {getUiOptions} from "@rjsf/utils";
 
 export const TextWidget = (props: WidgetProps) => {
     const {
@@ -134,11 +136,11 @@ const SuggestingInput = ({
 
     return (
         <Suggest
-            inputValueRenderer={(val) : string => val as string}
-            itemPredicate={(query, item) => (item as string).toLowerCase().includes(query.toLowerCase())}
+            inputValueRenderer={(val) : string => val}
+            itemPredicate={(query, item) => item.toLowerCase().includes(query.toLowerCase())}
             items={suggestions || []}
             query={inputValue}
-            onQueryChange={(q, e) => {
+            onQueryChange={(_q, e) => {
                 if (e) {
                     const val = e.target.value;
                     setInputValue(val);
@@ -149,17 +151,10 @@ const SuggestingInput = ({
                 placeholder: "Start typing...",
             }}
             onItemSelect={(item) => {
-                setInputValue(item as string)
+                setInputValue(item)
                 onChange(item)
             }}
-            itemRenderer={(item, {handleClick, modifiers}) => (
-                <MenuItem
-                    key={item as string}
-                    text={item as string}
-                    onClick={handleClick}
-                    active={modifiers.active}
-                />
-            )}
+            itemRenderer={renderSuggestItem}
             noResults={
                 <MenuItem
                     text={"No suggestions :("}
@@ -168,18 +163,34 @@ const SuggestingInput = ({
                 />
             }
             createNewItemFromQuery={(query) => query}
-            createNewItemRenderer={(query, active, handleClick) => (
-                <MenuItem
-                    icon="add"
-                    text={`Use "${query}"?`}
-                    active={active}
-                    onClick={handleClick}
-                    shouldDismissPopover={true}
-                />
-            )}
+            createNewItemRenderer={renderCreateNewItem}
         />
     );
 }
+
+const renderCreateNewItem = (
+    query: string,
+    active: boolean,
+    handleClick: React.MouseEventHandler<HTMLElement>
+): React.JSX.Element => (
+    <MenuItem
+        icon="add"
+        text={`Use "${query}"?`}
+        active={active}
+        onClick={handleClick}
+        shouldDismissPopover={true}
+    />
+);
+
+const renderSuggestItem: ItemRenderer<string> = (item, { handleClick, modifiers }) => (
+    <MenuItem
+        key={item}
+        text={item}
+        onClick={handleClick}
+        active={modifiers.active}
+        disabled={modifiers.disabled}
+    />
+);
 
 const getSuggestions = (type : string): string[] => {
     const source = suggestionMap[type];

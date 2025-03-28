@@ -1,4 +1,5 @@
-import {getSubmitButtonOptions, SubmitButtonProps} from "@rjsf/utils";
+import type {SubmitButtonProps} from '@rjsf/utils';
+import {getSubmitButtonOptions} from "@rjsf/utils";
 import {Button} from "@blueprintjs/core";
 
 export const SubmitButton = (options : SubmitButtonProps) => {

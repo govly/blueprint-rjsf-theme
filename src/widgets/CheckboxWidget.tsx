@@ -1,5 +1,6 @@
 import {Checkbox, FormGroup} from "@blueprintjs/core";
-import {getUiOptions, schemaRequiresTrueValue, WidgetProps} from "@rjsf/utils";
+import {getUiOptions, schemaRequiresTrueValue} from "@rjsf/utils";
+import type {WidgetProps} from '@rjsf/utils';
 
 export const CheckboxWidget = (props : WidgetProps) => {
     const {

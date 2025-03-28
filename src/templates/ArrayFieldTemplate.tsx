@@ -1,10 +1,14 @@
 import React from 'react';
 import {getDefaultRegistry} from '@rjsf/core';
-import {ArrayFieldTemplateProps, getUiOptions, Registry, RJSFSchema, UiSchema} from '@rjsf/utils';
+import type {ArrayFieldTemplateItemType, ArrayFieldTemplateProps} from "@rjsf/utils";
+import {
+    getUiOptions,
+    Registry,
+    RJSFSchema,
+    UiSchema,
+    getTemplate
+} from '@rjsf/utils';
 import {Button, ButtonGroup} from '@blueprintjs/core';
-import {TitleField} from "../fields/TitleField";
-import {DescriptionField} from "../fields/DescriptionField";
-import {ArrayFieldTemplateItemType} from "@rjsf/utils/src/types";
 
 export const ArrayFieldTemplate = (props: ArrayFieldTemplateProps): React.JSX.Element => {
     let {schema, registry} = props;
@@ -14,32 +18,61 @@ export const ArrayFieldTemplate = (props: ArrayFieldTemplateProps): React.JSX.El
 
 
     if (registry.schemaUtils.isMultiSelect(schema)) {
-        return <DefaultFixedArrayFieldTemplate props={schema}/>;
+        return <DefaultFixedArrayFieldTemplate props={props}/>;
     } else {
-        return <DefaultNormalArrayFieldTemplate props={schema}/>;
+        return <DefaultNormalArrayFieldTemplate props={props}/>;
     }
 };
 
-const ArrayFieldTitle = ({idSchema, title, uiSchema}: {
+const ArrayFieldTitle = ({idSchema, title, uiSchema, required, schema, registry}: {
     idSchema: RJSFSchema,
     title: string,
-    uiSchema: UiSchema
+    uiSchema: UiSchema,
+    required: boolean | undefined,
+    schema: RJSFSchema,
+    registry: Registry
 }): React.JSX.Element | null => {
     if (!title) {
         return null;
     }
+    const options = getUiOptions(uiSchema);
+    const TitleFieldTemplate = getTemplate<'TitleFieldTemplate'>('TitleFieldTemplate', registry, options);
 
     const id = `${idSchema.$id}__title`;
-    return <TitleField id={id} title={title} uiSchema={uiSchema}/>;
+    return <TitleFieldTemplate id={id}
+                               title={title}
+                               uiSchema={uiSchema}
+                               required={required}
+                               schema={schema}
+                               registry={registry}
+    />;
 };
 
-const ArrayFieldDescription = ({idSchema, description}: { idSchema: RJSFSchema, description: string }) => {
+const ArrayFieldDescription = ({idSchema, description, uiSchema, registry, schema}:
+                               {
+                                   idSchema: RJSFSchema,
+                                   description: string,
+                                   uiSchema: UiSchema,
+                                   registry: Registry,
+                                   schema: RJSFSchema
+                               }) => {
     if (!description) {
         return null;
     }
 
+    const options = getUiOptions(uiSchema);
+    const DescriptionFieldTemplate = getTemplate<'DescriptionFieldTemplate'>(
+        'DescriptionFieldTemplate',
+        registry,
+        options
+    );
     const id = `${idSchema.$id}__description`;
-    return <DescriptionField id={id} description={description}/>;
+    return <DescriptionFieldTemplate
+        id={id}
+        description={description}
+        schema={schema}
+        registry={registry}
+    />;
 };
 
 // Used in the two templates
@@ -90,25 +123,29 @@ const DefaultArrayItem = (props: ArrayFieldTemplateItemType) => {
     );
 };
 
-const DefaultFixedArrayFieldTemplate = ({props}: { props: RJSFSchema }) => {
+const DefaultFixedArrayFieldTemplate = ({props}: { props: ArrayFieldTemplateProps }) => {
     const arrayItems = props.items as ArrayFieldTemplateItemType[];
     const options = getUiOptions(props.uiSchema);
     const {title} = props
-    let uiTitle = options['ui:title'] || title;
+    const uiTitle = options['ui:title'] || title;
+    const uiDescription = options['ui:description'] || props.schema.description
     return (
         <div className={props.className}>
             <ArrayFieldTitle
                 idSchema={props.idSchema}
                 title={uiTitle as string}
                 uiSchema={options}
+                required={props.required}
+                schema={props.schema}
+                registry={props.registry}
             />
 
-            {(props.uiSchema['ui:description'] || props.schema.description) && (
+            {(options['ui:description'] || props.schema.description) && (
                 <div
                     className="field-description"
                     key={`field-description-${props.idSchema.$id}`}
                 >
-                    {props.uiSchema['ui:description'] || props.schema.description}
+                    {uiDescription as React.ReactNode}
                 </div>
             )}
 
@@ -132,22 +169,29 @@ const DefaultFixedArrayFieldTemplate = ({props}: { props: RJSFSchema }) => {
     );
 };
 
-const DefaultNormalArrayFieldTemplate = ({props}: { props: RJSFSchema }) => {
-    const arrayItems = props.items as ArrayFieldTemplateItemType[];
+const DefaultNormalArrayFieldTemplate = ({props}: { props: ArrayFieldTemplateProps }) => {
+    const arrayItems = props.items
+    const options = getUiOptions(props.uiSchema);
+    const uiTitle = options['ui:title'] || props.title
+    const uiDescription = options['ui:description'] || props.schema.description
     return (
         <div>
             <ArrayFieldTitle
                 idSchema={props.idSchema}
-                title={props.uiSchema['ui:title'] || props.title}
-                uiSchema={props.uiSchema}
+                title={uiTitle as string}
+                uiSchema={options}
+                required={props.required}
+                schema={props.schema}
+                registry={props.registry}
             />
 
-            {(props.uiSchema['ui:description'] || props.schema.description) && (
+            {(options['ui:description'] || props.schema.description) && (
                 <ArrayFieldDescription
                     idSchema={props.idSchema}
-                    description={
-                        props.uiSchema['ui:description'] || props.schema.description
-                    }
+                    description={uiDescription as string}
+                    schema={props.schema}
+                    registry={props.registry}
+                    uiSchema={options}
                 />
             )}
 

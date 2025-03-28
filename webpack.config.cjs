@@ -1,43 +1,42 @@
-const path = require('path');
+const path = require("path");
 
 module.exports = {
-    mode: 'production',
-    devtool: 'source-map',
-    entry: './src/index.ts',
+    entry: "./src/index.ts",
+    mode: "production",
     output: {
-        filename: 'bp5-rjsf-theme.bundle.js',
-        path: path.resolve(__dirname, 'dist'),
-        clean: true,
+        filename: "index.js",
+        path: path.resolve(__dirname, "dist"),
         library: {
-            name: 'Bp5Theme',
-            type: 'umd',
+            name: "Bp5Theme",
+            type: "umd",
         },
-        publicPath: '',
-        globalObject: 'typeof self !== "undefined" ? self : this'
-    },
-    optimization: {
-        minimize: false,
-        usedExports: false,
-        concatenateModules: false,
+        globalObject: "this",
+        clean: true,
     },
     resolve: {
-        extensions: ['.ts', '.js', '.json'],
+        extensions: [".ts", ".tsx", ".js"],
     },
     module: {
         rules: [
             {
-                test: /\.ts$/,
+                test: /\.tsx?$/,
+                loader: "ts-loader",
                 exclude: /node_modules/,
-                use: 'ts-loader'
-            }
-        ]
+            },
+            {
+                test: /\.css$/i,
+                use: ["style-loader", "css-loader"],
+            },
+        ],
     },
-    plugins: [
-    ],
     externals: {
-        "@rjsf/core": '@rjsf/core',
-        "@rjsf/utils": '@rjsf/utils',
-        "react": "react",
-        "@blueprintjs/core": "@blueprintjs/core"
-    }
+        react: "react",
+        "react-dom": "react-dom",
+        "@rjsf/core": "@rjsf/core",
+        "@blueprintjs/core": "@blueprintjs/core",
+        "@blueprintjs/select": "@blueprintjs/select",
+        "react-is": "react-is",
+        "css-loader" : "css-loader",
+        "lodash" : "lodash",
+    },
 };

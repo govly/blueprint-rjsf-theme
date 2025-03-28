@@ -1,9 +1,3 @@
-import {DescriptionField} from "./fields/DescriptionField";
-import {TitleField} from "./fields/TitleField";
-
-export const fields = {
-    DescriptionField,
-    TitleField,
-}
+export const fields = {}
 
 export default fields

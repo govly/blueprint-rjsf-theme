@@ -1,6 +1,7 @@
 import React, {FocusEvent} from 'react';
 import {Button, Card, FormGroup, InputGroup} from '@blueprintjs/core';
-import {ADDITIONAL_PROPERTY_FLAG, FieldTemplateProps} from "@rjsf/utils";
+import type {FieldTemplateProps} from '@rjsf/utils';
+import {ADDITIONAL_PROPERTY_FLAG} from "@rjsf/utils";
 
 export const FieldTemplate = (props : FieldTemplateProps) => {
     const {
