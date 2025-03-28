@@ -1,3 +1,9 @@
+## [1.0.5](https://github.com/anikitenko/bp5-rjsf-theme/compare/v1.0.4...v1.0.5) (2025-03-28)
+
+### Bug Fixes
+
+* **FieldTemplate|WrapIfAdditional:** add key ([897ce10](https://github.com/anikitenko/bp5-rjsf-theme/commit/897ce1086d24bfbb9492284a958948ad258f8a28))
+
 ## [1.0.4](https://github.com/anikitenko/bp5-rjsf-theme/compare/v1.0.3...v1.0.4) (2025-03-28)
 
 ### Bug Fixes
