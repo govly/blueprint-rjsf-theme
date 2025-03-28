@@ -1,0 +1,38 @@
+name: Create version bump PR
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  version-bump:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 23
+
+      - run: npm ci
+      - run: npm run build:all
+
+      - name: Bump version
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          VERSION_BRANCH="release-bump-v$(date +%s)"
+          git checkout -b $VERSION_BRANCH
+          npm version patch --no-git-tag-version
+          git commit -am "chore: bump version"
+          git push origin $VERSION_BRANCH
+          echo "VERSION_BRANCH=$VERSION_BRANCH" >> $GITHUB_ENV
+
+      - name: Create PR
+        uses: peter-evans/create-pull-request@v7
+        with:
+          branch: ${{ env.VERSION_BRANCH }}
+          title: "chore: bump version"
+          body: "This PR was automatically created to update the npm version after merging to main."

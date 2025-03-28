@@ -2,8 +2,6 @@ name: Node.js PR Edited
 
 on:
   pull_request:
-    types:
-      - synchronize
 
 jobs:
   build:
