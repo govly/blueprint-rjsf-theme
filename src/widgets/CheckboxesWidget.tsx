@@ -6,8 +6,8 @@ import {
     enumOptionsSelectValue,
     enumOptionsValueForIndex,
     getUiOptions,
-    WidgetProps,
 } from '@rjsf/utils';
+import type {WidgetProps} from '@rjsf/utils';
 
 import {Checkbox, FormGroup} from '@blueprintjs/core';
 

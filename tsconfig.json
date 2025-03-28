@@ -1,19 +1,13 @@
 {
   "compilerOptions": {
-    "target": "es6",
-    "module": "esnext",
-    "moduleResolution": "node",
+    "target": "ESNext",
+    "module": "ESNext",
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "outDir": "dist/types",
-    "sourceMap": true,
-    "declaration": true,
-    "declarationMap": true,
     "jsx": "react-jsx",
+    "moduleResolution": "node",
   },
-  "include": [
-    "src/**/*"
-  ]
+  "include": ["src"],
 }

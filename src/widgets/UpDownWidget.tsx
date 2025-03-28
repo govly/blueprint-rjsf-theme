@@ -1,6 +1,7 @@
 import React from 'react';
 import {FormGroup, NumericInput} from '@blueprintjs/core';
-import {getUiOptions, WidgetProps} from "@rjsf/utils";
+import type {WidgetProps} from '@rjsf/utils';
+import {getUiOptions} from "@rjsf/utils";
 
 export const UpDownWidget = (props : WidgetProps) => {
     const {

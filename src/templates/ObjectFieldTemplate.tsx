@@ -1,7 +1,6 @@
 import React from 'react';
-import {canExpand, getUiOptions, ObjectFieldTemplateProps} from '@rjsf/utils';
-import {TitleField} from "../fields/TitleField";
-import {DescriptionField} from "../fields/DescriptionField";
+import type {ObjectFieldTemplateProps} from '@rjsf/utils';
+import {canExpand, getTemplate, getUiOptions} from '@rjsf/utils';
 import {Button, Card} from "@blueprintjs/core";
 
 export const ObjectFieldTemplate = (props: ObjectFieldTemplateProps) => {
@@ -16,22 +15,36 @@ export const ObjectFieldTemplate = (props: ObjectFieldTemplateProps) => {
         schema,
         title,
         uiSchema,
+        registry,
+        required
     } = props;
     const options = getUiOptions(uiSchema);
     const uiTitle = options['ui:title'] || title;
+    const TitleFieldTemplate = getTemplate<'TitleFieldTemplate'>('TitleFieldTemplate', registry, options);
+    const DescriptionFieldTemplate = getTemplate<'DescriptionFieldTemplate'>(
+        'DescriptionFieldTemplate',
+        registry,
+        options
+    );
     return (
         <Card style={{ marginBottom: 20 }}>
             {(options['ui:title'] || title) && (
-                <TitleField
+                <TitleFieldTemplate
                     id={`${idSchema.$id}-title`}
                     title={uiTitle as string}
-                    uiSchema={options}
+                    required={required}
+                    schema={schema}
+                    uiSchema={uiSchema}
+                    registry={registry}
                 />
             )}
             {description && (
-                <DescriptionField
+                <DescriptionFieldTemplate
                     id={`${idSchema.$id}-description`}
                     description={description}
+                    schema={schema}
+                    uiSchema={uiSchema}
+                    registry={registry}
                 />
             )}
             {properties.map((element, index) => (

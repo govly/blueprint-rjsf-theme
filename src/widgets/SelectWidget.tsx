@@ -3,8 +3,8 @@ import {
     ariaDescribedByIds,
     enumOptionsValueForIndex,
     getUiOptions,
-    WidgetProps,
 } from '@rjsf/utils';
+import type {WidgetProps} from '@rjsf/utils';
 import {FormGroup, HTMLSelect} from "@blueprintjs/core";
 import {getDefaultRegistry} from "@rjsf/core";
 

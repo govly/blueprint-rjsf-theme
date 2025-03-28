@@ -1,7 +1,9 @@
 import React from 'react';
 import {Callout} from '@blueprintjs/core';
+import type {DescriptionFieldProps} from "@rjsf/utils";
 
-export const DescriptionField = ({id, description}: { id: string, description: string }): React.JSX.Element | null => {
+export const DescriptionFieldTemplate = (props : DescriptionFieldProps) => {
+    const {id, description} = props
     if (!description) {
         return null;
     }

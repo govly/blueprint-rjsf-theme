@@ -20,12 +20,12 @@
     "json-schema-form"
   ],
   "author": "anikitenko",
-  "license": "ISC",
+  "license": "MIT",
   "homepage": "https://alexvwan.me",
   "bugs": {
     "url": "https://github.com/anikitenko/bp5-rjsf-theme/issues"
   },
-  "main": "dist/bp5-rjsf-theme.bundle.js",
+  "main": "dist/index.js",
   "types": "dist/types/index.d.ts",
   "type": "module",
   "files": [
@@ -33,13 +33,16 @@
   ],
   "scripts": {
     "build": "webpack --config webpack.config.cjs",
-    "build:types": "tsc --emitDeclarationOnly",
+    "build:types": "tsc --project tsconfig.build.json",
+    "build:all": "npm run build && npm run build:types",
     "test": "jest"
   },
   "devDependencies": {
     "@types/jest": "^29.5.14",
     "@types/react": "^18.3.20",
+    "css-loader": "^7.1.2",
     "jest": "^29.7.0",
+    "style-loader": "^4.0.0",
     "ts-jest": "^29.2.5",
     "ts-loader": "^9.5.2",
     "typescript": "^5.7.3",

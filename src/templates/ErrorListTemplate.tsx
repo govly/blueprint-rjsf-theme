@@ -1,5 +1,6 @@
 import {Callout, Intent} from "@blueprintjs/core";
-import {ErrorListProps, TranslatableString} from "@rjsf/utils";
+import type {ErrorListProps} from '@rjsf/utils';
+import {TranslatableString} from "@rjsf/utils";
 import React from "react";
 
 export const ErrorListTemplate = ({errors, registry} : ErrorListProps) : React.JSX.Element => {
