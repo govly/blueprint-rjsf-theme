@@ -1,3 +1,9 @@
+## [1.0.2](https://github.com/anikitenko/bp5-rjsf-theme/compare/v1.0.1...v1.0.2) (2025-03-28)
+
+### Bug Fixes
+
+* **build:** publish package with provenance ([e63d764](https://github.com/anikitenko/bp5-rjsf-theme/commit/e63d7649a5054c65855463819a807301d45e1c28))
+
 ## [1.0.1](https://github.com/anikitenko/bp5-rjsf-theme/compare/v1.0.0...v1.0.1) (2025-03-28)
 
 ### Bug Fixes
