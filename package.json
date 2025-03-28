@@ -28,6 +28,9 @@
   "files": [
     "dist"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "prepare": "node .husky/install.mjs",
     "semantic-release": "semantic-release",
