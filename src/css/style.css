@@ -1,0 +1,7 @@
+.selectWrapper {
+    display: flex;
+}
+
+.selectWrapper > select {
+    flex: 1;
+}
