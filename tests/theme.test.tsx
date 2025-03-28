@@ -53,4 +53,29 @@ describe("RJSF Blueprint5 Theme", () => {
     expect(screen.getByLabelText("B")).toBeInTheDocument();
     expect(screen.getByLabelText("C")).toBeInTheDocument();
   });
+
+  it("renders a select widget", () => {
+    render(
+      <Form
+        schema={{
+          type: "object",
+          properties: {
+            features: {
+              type: "string",
+              title: "Features",
+              enum: ["A", "B", "C"],
+            },
+          },
+        }}
+        uiSchema={{
+          features: {
+            "ui:widget": "select",
+          },
+        }}
+        validator={validator}
+      />,
+    );
+
+    expect(screen.getByText("Open dropdown")).toBeInTheDocument();
+  });
 });
