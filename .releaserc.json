@@ -6,13 +6,7 @@
     "@semantic-release/changelog",
     "@semantic-release/npm",
     "@semantic-release/git",
-    "@semantic-release/github",
-    [
-      "@semantic-release/exec",
-      {
-        "publishCmd": "npm publish --provenance --access public"
-      }
-    ]
+    "@semantic-release/github"
   ],
   "preset": "conventionalcommits"
 }
