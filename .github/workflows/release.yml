@@ -25,7 +25,7 @@ jobs:
 
       - run: npm ci
       - run: npm test
-      - run: npm build:all
+      - run: npm run build:all
 
       - name: Release with semantic-release
         env:
