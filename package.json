@@ -4,7 +4,7 @@
     "type": "git",
     "url": "https://github.com/anikitenko/bp5-rjsf-theme.git"
   },
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "BlueprintJS 5 theme for React JSON Schema Form",
   "keywords": [
     "bp",
