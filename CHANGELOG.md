@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/anikitenko/bp5-rjsf-theme/compare/v1.0.0...v1.0.1) (2025-03-28)
+
+### Bug Fixes
+
+* **build:** change npm command ([014d8a7](https://github.com/anikitenko/bp5-rjsf-theme/commit/014d8a72f99f0f6c1d13943dd4cbd62fc5f1ee0b))
+* **build:** run prepare step before release ([454ac8c](https://github.com/anikitenko/bp5-rjsf-theme/commit/454ac8c44fe2362634d34bfb85f5143e3666047a))
+
 ## 1.0.0 (2025-03-28)
 
 ### Features
