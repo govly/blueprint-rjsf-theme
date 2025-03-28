@@ -29,7 +29,7 @@
     "dist"
   ],
   "scripts": {
-    "prepare": "husky",
+    "prepare": "node .husky/install.mjs",
     "semantic-release": "semantic-release",
     "commitlint": "commitlint --edit $1",
     "build": "webpack --config webpack.config.cjs",
