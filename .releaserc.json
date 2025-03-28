@@ -1,12 +1,21 @@
 {
   "branches": ["main"],
+  "scripts": {
+    "prepare": "npm run build:all"
+  },
   "plugins": [
     "@semantic-release/commit-analyzer",
     "@semantic-release/release-notes-generator",
     "@semantic-release/changelog",
     "@semantic-release/npm",
     "@semantic-release/git",
-    "@semantic-release/github"
+    "@semantic-release/github",
+    [
+      "@semantic-release/exec",
+      {
+        "publishCmd": "npm publish --provenance --access public"
+      }
+    ]
   ],
   "preset": "conventionalcommits"
 }
