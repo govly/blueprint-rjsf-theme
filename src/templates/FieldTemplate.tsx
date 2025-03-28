@@ -49,8 +49,9 @@ const WrapIfAdditional = ({
         gap: "5px",
         marginBottom: "5px",
       }}
+      key={`${id}-key`}
     >
-      <div style={{ flex: 1 }} key={`${id}-key`}>
+      <div style={{ flex: 1 }}>
         <FormGroup>
           <InputGroup
             required={required}
