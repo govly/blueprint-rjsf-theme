@@ -1,4 +1,4 @@
-name: Node.js PR Edited
+name: PR Created/Updated
 
 on:
   pull_request:
