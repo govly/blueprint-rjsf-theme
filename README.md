@@ -1,3 +1,9 @@
+[![npm version](https://img.shields.io/npm/v/@anikitenko/bp5-rjsf-theme?color=blue)](https://www.npmjs.com/package/@anikitenko/bp5-rjsf-theme)
+[![npm downloads](https://img.shields.io/npm/dw/@anikitenko/bp5-rjsf-theme)](https://www.npmjs.com/package/@anikitenko/bp5-rjsf-theme)
+[![Build](https://github.com/anikitenko/bp5-rjsf-theme/actions/workflows/release.yml/badge.svg)](https://github.com/anikitenko/bp5-rjsf-theme/actions/workflows/release.yml)
+[![License](https://img.shields.io/github/license/anikitenko/bp5-rjsf-theme)](LICENSE)
+[![bundlephobia](https://img.shields.io/bundlephobia/minzip/@anikitenko/bp5-rjsf-theme)](https://bundlephobia.com/package/@anikitenko/bp5-rjsf-theme)
+
 <p style="text-align: center">
   <img src="./assets/logo.svg" width="420" alt="bp5-rjsf-theme logo" />
 </p>
@@ -27,27 +33,27 @@ This is the **first and only** RJSF theme implementation built from the ground u
 
 ## 🧩 Implemented Widgets
 
-| Widget            | Status |
-|-------------------|--------|
-| `TextWidget`      | ✅     |
-| `UpDownWidget`    | ✅     |
-| `SelectWidget`    | ✅     |
-| `CheckboxWidget`  | ✅     |
-| `CheckboxesWidget`| ✅     |
+| Widget             | Status |
+| ------------------ | ------ |
+| `TextWidget`       | ✅     |
+| `UpDownWidget`     | ✅     |
+| `SelectWidget`     | ✅     |
+| `CheckboxWidget`   | ✅     |
+| `CheckboxesWidget` | ✅     |
 
 ---
 
 ## 🏗️ Implemented Templates
 
-| Template                    | Status |
-|-----------------------------|--------|
-| `ObjectFieldTemplate`       | ✅     |
-| `FieldTemplate`             | ✅     |
-| `ErrorListTemplate`         | ✅     |
-| `ArrayFieldTemplate`        | ✅     |
-| `SubmitButton`              | ✅     |
-| `TitleFieldTemplate`        | ✅     |
-| `DescriptionFieldTemplate`  | ✅     |
+| Template                   | Status |
+| -------------------------- | ------ |
+| `ObjectFieldTemplate`      | ✅     |
+| `FieldTemplate`            | ✅     |
+| `ErrorListTemplate`        | ✅     |
+| `ArrayFieldTemplate`       | ✅     |
+| `SubmitButton`             | ✅     |
+| `TitleFieldTemplate`       | ✅     |
+| `DescriptionFieldTemplate` | ✅     |
 
 ---
 
@@ -66,6 +72,7 @@ const Form = withTheme(Bp5Theme);
 ```
 
 ## 📦 Installation
+
 ```
 npm install @anikitenko/bp5-rjsf-theme
 # or
@@ -76,8 +83,8 @@ yarn add @anikitenko/bp5-rjsf-theme
 
 If you find bugs or Blueprint components not rendering as expected:
 
- - Please open an [issue on GitHub](https://github.com/anikitenko/bp5-rjsf-theme/issues)
- - Include a minimal schema and usage snippet to help us debug quickly
+- Please open an [issue on GitHub](https://github.com/anikitenko/bp5-rjsf-theme/issues)
+- Include a minimal schema and usage snippet to help us debug quickly
 
 ## ❤️ Contributing
 

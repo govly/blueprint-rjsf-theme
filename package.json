@@ -23,8 +23,14 @@
     "url": "https://github.com/anikitenko/bp5-rjsf-theme/issues"
   },
   "main": "dist/index.js",
-  "types": "dist/types/index.d.ts",
+  "types": "dist/@types/index.d.ts",
   "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/@types/index.d.ts"
+    }
+  },
   "files": [
     "dist"
   ],

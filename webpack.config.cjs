@@ -7,11 +7,13 @@ module.exports = {
     filename: "index.js",
     path: path.resolve(__dirname, "dist"),
     library: {
-      name: "Bp5Theme",
-      type: "umd",
+      type: "module",
     },
     globalObject: "this",
     clean: true,
+  },
+  experiments: {
+    outputModule: true,
   },
   resolve: {
     extensions: [".ts", ".tsx", ".js"],
