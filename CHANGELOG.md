@@ -1,3 +1,9 @@
+## [1.0.6](https://github.com/anikitenko/bp5-rjsf-theme/compare/v1.0.5...v1.0.6) (2025-03-28)
+
+### Bug Fixes
+
+* **FieldTemplate:** add key ([a479d1b](https://github.com/anikitenko/bp5-rjsf-theme/commit/a479d1b08f2c4c5786e00e3c18db2f5718cd2c20))
+
 ## [1.0.5](https://github.com/anikitenko/bp5-rjsf-theme/compare/v1.0.4...v1.0.5) (2025-03-28)
 
 ### Bug Fixes
