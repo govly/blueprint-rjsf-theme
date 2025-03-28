@@ -1,3 +1,9 @@
+## [1.0.4](https://github.com/anikitenko/bp5-rjsf-theme/compare/v1.0.3...v1.0.4) (2025-03-28)
+
+### Bug Fixes
+
+* **build:** change library type ([a6b8ac3](https://github.com/anikitenko/bp5-rjsf-theme/commit/a6b8ac3eb52fd79b1118384aaf138a116dfc5fc5))
+
 ## [1.0.3](https://github.com/anikitenko/bp5-rjsf-theme/compare/v1.0.2...v1.0.3) (2025-03-28)
 
 ### Bug Fixes
