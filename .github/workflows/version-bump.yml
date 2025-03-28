@@ -34,5 +34,6 @@ jobs:
         uses: peter-evans/create-pull-request@v7
         with:
           branch: ${{ env.VERSION_BRANCH }}
+          base: "main"
           title: "chore: bump version"
           body: "This PR was automatically created to update the npm version after merging to main."
