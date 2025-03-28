@@ -25,9 +25,13 @@ jobs:
 
       - run: npm ci
       - run: npm test
+      - run: npm run build:all
+
+      - name: Verify the integrity of provenance attestations and registry signatures for installed dependencies
+        run: npm audit signatures
 
       - name: Release with semantic-release
         env:
-          GITHUB_TOKEN: ${{ secrets.SEMANTIC_RELEASE }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: npx semantic-release

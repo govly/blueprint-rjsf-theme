@@ -1,8 +1,5 @@
 {
   "branches": ["main"],
-  "scripts": {
-    "prepare": "npm run build:all"
-  },
   "plugins": [
     "@semantic-release/commit-analyzer",
     "@semantic-release/release-notes-generator",
