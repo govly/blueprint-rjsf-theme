@@ -9,7 +9,7 @@ export const FieldTemplate = (props: FieldTemplateProps) => {
 
   return (
     <WrapIfAdditional props={props} additional={additional}>
-      {children}
+      {React.Children.toArray(children)}
       {errors}
       {help}
     </WrapIfAdditional>
@@ -49,7 +49,6 @@ const WrapIfAdditional = ({
         gap: "5px",
         marginBottom: "5px",
       }}
-      key={`${id}-key`}
     >
       <div style={{ flex: 1 }}>
         <FormGroup>
