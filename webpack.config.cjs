@@ -1,20 +1,8 @@
 const path = require("path");
 
-module.exports = {
+const common = {
   entry: "./src/index.ts",
   mode: "production",
-  output: {
-    filename: "index.js",
-    path: path.resolve(__dirname, "dist"),
-    library: {
-      type: "module",
-    },
-    globalObject: "this",
-    clean: true,
-  },
-  experiments: {
-    outputModule: true,
-  },
   resolve: {
     extensions: [".ts", ".tsx", ".js"],
   },
@@ -33,13 +21,44 @@ module.exports = {
   },
   externals: {
     react: "react",
-    "react-dom": "react-dom",
     "@rjsf/core": "@rjsf/core",
+    "@rjsf/utils": "@rjsf/utils",
     "@blueprintjs/core": "@blueprintjs/core",
     "@blueprintjs/select": "@blueprintjs/select",
-    "react-is": "react-is",
-    "css-loader": "css-loader",
-    lodash: "lodash",
     "@rjsf/validator-ajv8": "@rjsf/validator-ajv8",
   },
 };
+
+const output = {
+  filename: "index.js",
+  globalObject: "this",
+  clean: true,
+};
+
+const cjsConfig = {
+  ...common,
+  output: {
+    ...output,
+    path: path.resolve(__dirname, "dist/cjs"),
+    library: {
+      type: "commonjs2",
+    },
+  },
+  target: "node",
+};
+
+const esmConfig = {
+  ...common,
+  output: {
+    ...output,
+    path: path.resolve(__dirname, "dist/esm"),
+    library: {
+      type: "module",
+    },
+  },
+  experiments: {
+    outputModule: true,
+  },
+};
+
+module.exports = [cjsConfig, esmConfig];

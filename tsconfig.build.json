@@ -1,9 +1,10 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
+    "outDir": "dist/@types",
     "declaration": true,
-    "emitDeclarationOnly": false,
-    "outDir": "dist/@types"
+    "emitDeclarationOnly": true,
+    "isolatedModules": false
   },
   "include": ["src"]
 }

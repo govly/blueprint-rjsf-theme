@@ -1,7 +1,7 @@
-.selectWrapper {
-    display: flex;
+.bp5-rjsf-selectWrapper {
+  display: flex;
 }
 
-.selectWrapper > select {
-    flex: 1;
+.bp5-rjsf-selectWrapper > select {
+  flex: 1;
 }

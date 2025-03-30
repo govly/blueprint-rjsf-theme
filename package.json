@@ -22,14 +22,13 @@
   "bugs": {
     "url": "https://github.com/anikitenko/bp5-rjsf-theme/issues"
   },
-  "main": "dist/index.js",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
   "types": "dist/@types/index.d.ts",
   "type": "module",
   "exports": {
-    ".": {
-      "import": "./dist/index.js",
-      "types": "./dist/@types/index.d.ts"
-    }
+    "require": "./dist/cjs/index.js",
+    "import": "./dist/esm/index.js"
   },
   "files": [
     "dist"
@@ -42,7 +41,9 @@
     "prepare": "node .husky/install.mjs",
     "semantic-release": "semantic-release",
     "commitlint": "commitlint --edit $1",
-    "build": "webpack --config webpack.config.cjs",
+    "build": "npm run build:cjs && npm run build:esm",
+    "build:cjs": "webpack --config webpack.config.cjs --env target=cjs",
+    "build:esm": "webpack --config webpack.config.cjs --env target=esm",
     "build:types": "tsc --project tsconfig.build.json",
     "build:all": "npm run build && npm run build:types",
     "test": "npx vitest run"

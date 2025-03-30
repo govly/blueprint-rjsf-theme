@@ -33,13 +33,13 @@ This is the **first and only** RJSF theme implementation built from the ground u
 
 ## 🧩 Implemented Widgets
 
-| Widget             | Status |
-| ------------------ | ------ |
-| `TextWidget`       | ✅     |
-| `UpDownWidget`     | ✅     |
-| `SelectWidget`     | ✅     |
-| `CheckboxWidget`   | ✅     |
-| `CheckboxesWidget` | ✅     |
+| Widget                            | Status |
+| --------------------------------- | ------ |
+| `TextWidget`                      | ✅     |
+| `UpDownWidget`                    | ✅     |
+| `SelectWidget` with `MultiSelect` | ✅     |
+| `CheckboxWidget`                  | ✅     |
+| `CheckboxesWidget`                | ✅     |
 
 ---
 
@@ -54,6 +54,7 @@ This is the **first and only** RJSF theme implementation built from the ground u
 | `SubmitButton`             | ✅     |
 | `TitleFieldTemplate`       | ✅     |
 | `DescriptionFieldTemplate` | ✅     |
+| `WrapIfAdditionalTemplate` | ✅     |
 
 ---
 
