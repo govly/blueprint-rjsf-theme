@@ -1,3 +1,9 @@
+## [1.0.8](https://github.com/anikitenko/bp5-rjsf-theme/compare/v1.0.7...v1.0.8) (2025-03-30)
+
+### Bug Fixes
+
+* **SelectWidget:** use React.Children.toArray ([26b3d27](https://github.com/anikitenko/bp5-rjsf-theme/commit/26b3d2711eeaa8f2b26f9eb7f4e8044b705c8242))
+
 ## [1.0.7](https://github.com/anikitenko/bp5-rjsf-theme/compare/v1.0.6...v1.0.7) (2025-03-28)
 
 ### Bug Fixes
