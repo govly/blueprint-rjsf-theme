@@ -3,7 +3,6 @@
 [![Build](https://github.com/anikitenko/bp5-rjsf-theme/actions/workflows/release.yml/badge.svg)](https://github.com/anikitenko/bp5-rjsf-theme/actions/workflows/release.yml)
 [![CodeQL](https://github.com/anikitenko/bp5-rjsf-theme/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/anikitenko/bp5-rjsf-theme/actions/workflows/github-code-scanning/codeql)
 [![License](https://img.shields.io/github/license/anikitenko/bp5-rjsf-theme)](LICENSE)
-[![bundlephobia](https://img.shields.io/bundlephobia/minzip/@anikitenko/bp5-rjsf-theme)](https://bundlephobia.com/package/@anikitenko/bp5-rjsf-theme)
 
 <p style="text-align: center">
   <img src="./assets/logo.svg" width="420" alt="bp5-rjsf-theme logo" />
