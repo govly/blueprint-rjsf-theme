@@ -58,15 +58,20 @@ export const TextWidget = (props: WidgetProps) => {
     }
   };
 
-  const _onChange = ({ target: { value } }: { target: { value: string } }) =>
-    setLocalValue(value === "" ? options.emptyValue : value);
+  const _onChange = ({ target: { value } }: { target: { value: string } }) => {
+    const empty = options.emptyValue || " ";
+    setLocalValue(value === "" ? empty : value);
+  };
   const _onBlur = (e: FocusEvent<HTMLInputElement>) => {
     const val = e.target.value;
-    onChange(val === "" ? options.emptyValue : val);
-    onBlur(id, val);
+    const empty = options.emptyValue || " ";
+    onChange(val === "" ? empty : val);
+    onBlur(id, val === "" ? empty : val);
   };
-  const _onFocus = ({ target: { value } }: { target: { value: string } }) =>
-    onFocus(id, value);
+  const _onFocus = ({ target: { value } }: { target: { value: string } }) => {
+    const empty = options.emptyValue || " ";
+    onFocus(id, value === "" ? empty : value);
+  };
 
   const uiProps = getUiOptions(uiSchema);
   const uiDescription = uiProps["ui:description"] || schema.description;
