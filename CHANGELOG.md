@@ -1,3 +1,9 @@
+## [1.0.10](https://github.com/anikitenko/bp5-rjsf-theme/compare/v1.0.9...v1.0.10) (2025-04-01)
+
+### Bug Fixes
+
+* **TextWidget:** remove weird HTMLSelect ([cdd72c8](https://github.com/anikitenko/bp5-rjsf-theme/commit/cdd72c8277247032b7d52c5a5376b7a01fd6fa8a))
+
 ## [1.0.9](https://github.com/anikitenko/bp5-rjsf-theme/compare/v1.0.8...v1.0.9) (2025-04-01)
 
 ### Bug Fixes
