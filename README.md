@@ -1,6 +1,7 @@
 [![npm version](https://img.shields.io/npm/v/@anikitenko/bp5-rjsf-theme?color=blue)](https://www.npmjs.com/package/@anikitenko/bp5-rjsf-theme)
 [![npm downloads](https://img.shields.io/npm/dw/@anikitenko/bp5-rjsf-theme)](https://www.npmjs.com/package/@anikitenko/bp5-rjsf-theme)
 [![Build](https://github.com/anikitenko/bp5-rjsf-theme/actions/workflows/release.yml/badge.svg)](https://github.com/anikitenko/bp5-rjsf-theme/actions/workflows/release.yml)
+[![CodeFactor](https://www.codefactor.io/repository/github/anikitenko/bp5-rjsf-theme/badge)](https://www.codefactor.io/repository/github/anikitenko/bp5-rjsf-theme)
 [![CodeQL](https://github.com/anikitenko/bp5-rjsf-theme/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/anikitenko/bp5-rjsf-theme/actions/workflows/github-code-scanning/codeql)
 [![License](https://img.shields.io/github/license/anikitenko/bp5-rjsf-theme)](LICENSE)
 

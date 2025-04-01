@@ -1,17 +1,5 @@
-import {
-  Button,
-  ControlGroup,
-  FormGroup,
-  HTMLSelect,
-  InputGroup,
-  TextArea,
-} from "@blueprintjs/core";
-import React, {
-  ChangeEvent,
-  FocusEvent,
-  FocusEventHandler,
-  useState,
-} from "react";
+import { FormGroup, InputGroup } from "@blueprintjs/core";
+import React, { FocusEvent, useState } from "react";
 import type { WidgetProps } from "@rjsf/utils";
 import { getUiOptions } from "@rjsf/utils";
 
@@ -33,30 +21,7 @@ export const TextWidget = (props: WidgetProps) => {
     uiSchema,
   } = props;
 
-  const inputTypes = [
-    { value: "text", label: "Text" },
-    { value: "random", label: "Random" },
-    { value: "textarea", label: "Textarea" },
-    { value: "other", label: "Other" },
-  ];
-
-  const rawType = schema.type;
-  const setType = rawType === "string" ? "text" : `${rawType}`;
-  const inferredType = inputTypes.some((i) => i.value === setType)
-    ? setType
-    : "other";
-
   const [localValue, setLocalValue] = useState(value || "");
-  const [textType, setTextType] = useState(inferredType);
-
-  const handleTextTypeChange = (e: ChangeEvent<HTMLSelectElement>) => {
-    const newType = e.target.value;
-    setTextType(newType);
-
-    if (newType === "random") {
-      onChange(Math.random().toString(36).substring(2, 15));
-    }
-  };
 
   const _onChange = ({ target: { value } }: { target: { value: string } }) => {
     const empty = options.emptyValue || " ";
@@ -80,6 +45,7 @@ export const TextWidget = (props: WidgetProps) => {
     <FormGroup
       disabled={disabled}
       helperText={uiDescription as string}
+      fill={true}
       label={uiLabel as string}
       labelFor={id}
       labelInfo={
@@ -88,55 +54,18 @@ export const TextWidget = (props: WidgetProps) => {
           : null
       }
     >
-      <ControlGroup
+      <InputGroup
+        id={id}
         fill={true}
-        vertical={false}
-        style={{ alignItems: "stretch" }}
-      >
-        <HTMLSelect options={inputTypes} onChange={handleTextTypeChange} />
-        {textType === "textarea" && (
-          <TextArea
-            id={id}
-            placeholder={placeholder}
-            disabled={disabled}
-            readOnly={readonly}
-            autoFocus={autofocus}
-            onChange={_onChange}
-            onBlur={
-              _onBlur as unknown as FocusEventHandler<HTMLTextAreaElement>
-            }
-            onFocus={_onFocus}
-            value={localValue}
-            style={{ resize: "vertical" }}
-          />
-        )}
-        {!["textarea"].includes(textType) && (
-          <>
-            <InputGroup
-              id={id}
-              placeholder={placeholder}
-              disabled={disabled}
-              readOnly={readonly}
-              autoFocus={autofocus}
-              onChange={_onChange}
-              onBlur={_onBlur}
-              onFocus={_onFocus}
-              value={localValue}
-              type={textType}
-            />
-            {textType === "random" && (
-              <Button
-                variant={"minimal"}
-                icon={"refresh"}
-                size={"small"}
-                onClick={() =>
-                  onChange(Math.random().toString(36).substring(2, 15))
-                }
-              />
-            )}
-          </>
-        )}
-      </ControlGroup>
+        placeholder={placeholder}
+        disabled={disabled}
+        readOnly={readonly}
+        autoFocus={autofocus}
+        onChange={_onChange}
+        onBlur={_onBlur}
+        onFocus={_onFocus}
+        value={localValue}
+      />
     </FormGroup>
   );
 };
