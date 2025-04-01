@@ -1,3 +1,9 @@
+## [1.0.9](https://github.com/anikitenko/bp5-rjsf-theme/compare/v1.0.8...v1.0.9) (2025-04-01)
+
+### Bug Fixes
+
+* **TextWidget:** convert empty strings to " " ([9793e6f](https://github.com/anikitenko/bp5-rjsf-theme/commit/9793e6fa9a416adf16721602dae098cd21d030b4))
+
 ## [1.0.8](https://github.com/anikitenko/bp5-rjsf-theme/compare/v1.0.7...v1.0.8) (2025-03-30)
 
 ### Bug Fixes
