@@ -2,10 +2,10 @@ import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import { withTheme } from "@rjsf/core";
 import validator from "@rjsf/validator-ajv8";
-import { Bp5Theme } from "../src";
+import { Bp6Theme } from "../src";
 import { expect } from "vitest";
 
-const Form = withTheme(Bp5Theme);
+const Form = withTheme(Bp6Theme);
 
 describe("Select box rendering", () => {
   it("renders a select widget", () => {

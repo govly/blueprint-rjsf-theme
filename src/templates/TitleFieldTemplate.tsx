@@ -9,7 +9,7 @@ export const TitleFieldTemplate = (
   return (
     <H5 id={id}>
       {(uiSchema && uiSchema["ui:title"]) || title}
-      {required && <span className="bp5-intent-danger"> *</span>}
+      {required && <span className="bp6-intent-danger"> *</span>}
     </H5>
   );
 };

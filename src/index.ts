@@ -7,7 +7,7 @@ import "./css/style.css";
 
 const { fields, widgets } = getDefaultRegistry();
 
-export const Bp5Theme: ThemeProps = {
+export const Bp6Theme: ThemeProps = {
   widgets: {
     ...widgets,
     ...Widgets,

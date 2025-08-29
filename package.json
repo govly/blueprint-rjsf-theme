@@ -1,11 +1,11 @@
 {
-  "name": "@anikitenko/bp5-rjsf-theme",
-  "repository": "github:anikitenko/bp5-rjsf-theme",
+  "name": "@anikitenko/bp6-rjsf-theme",
+  "repository": "github:anikitenko/bp6-rjsf-theme",
   "version": "1.0.11",
-  "description": "BlueprintJS 5 theme for React JSON Schema Form",
+  "description": "BlueprintJS 6 theme for React JSON Schema Form",
   "keywords": [
     "bp",
-    "bp5",
+    "bp6",
     "blueprint",
     "blueprintjs",
     "react",
@@ -20,7 +20,7 @@
   "license": "MIT",
   "homepage": "https://alexvwan.me",
   "bugs": {
-    "url": "https://github.com/anikitenko/bp5-rjsf-theme/issues"
+    "url": "https://github.com/anikitenko/bp6-rjsf-theme/issues"
   },
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -75,8 +75,8 @@
     "webpack-cli": "^6.0.1"
   },
   "dependencies": {
-    "@blueprintjs/core": "^5.18.0",
-    "@blueprintjs/select": "^5.3.20",
+    "@blueprintjs/core": "^6.0.0",
+    "@blueprintjs/select": "^6.0.0",
     "@rjsf/core": "^5.24.9",
     "@rjsf/validator-ajv8": "^5.24.9"
   }
