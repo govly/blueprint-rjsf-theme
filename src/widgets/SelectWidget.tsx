@@ -123,7 +123,7 @@ export const SelectWidget = (props: WidgetProps): React.JSX.Element => {
         <HTMLSelect
           id={id}
           fill
-          className={"bp5-rjsf-selectWrapper"}
+          className={"bp6-rjsf-selectWrapper"}
           disabled={disabled}
           required={required}
           autoFocus={autofocus}
